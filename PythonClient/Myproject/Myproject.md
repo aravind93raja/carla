@@ -12,13 +12,13 @@ Goals of the Project are 4 fold :
 
 ( Done )  CODE: PIDControl_DataCollection.py
 
-3)To Implement and Simulate Error state Extended Kalman Filter 
+3)To Train a Neural Network based on [Nvidia's End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf "Nvidia's End to End Learning for Self-Driving Cars")  with Depth Images instead of RGB Images for prediction of Steering Values.
+
+( Done )
+
+4)To Implement and Simulate Error state Extended Kalman Filter 
 
 (In Progress ) Ground Work on my other repository :https://github.com/aravind93raja/State-Estimation-and-Localization
-
-4)To Train a Neural Network based on [Nvidia's End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf "Nvidia's End to End Learning for Self-Driving Cars")  with Depth Images instead of RGB Images for prediction of Steering Values.
-
-(In Progress )
 
 __________________________________________________________________________________________________________________________
 
@@ -29,5 +29,26 @@ Task 1 & 2 : **_PID Control_**
 The results of the simulation can be viewed in the following video : 
 
 [![](http://img.youtube.com/vi/8JAmAtHkm9I/0.jpg)](https://www.youtube.com/watch?v=8JAmAtHkm9I "")
+
+Task 3 : **_Training a Neural Network & Lateral Controller based on the same _**
+
+*The same Neural Network Architecture of [Nvidia's End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf "Nvidia's End to End Learning for Self-Driving Cars") was used.
+
+*Instead of 3 channel RGB Images ,Single Depth Channel Images were used in this Architecture.
+
+<img src="images/NN.png" height="400">
+
+*Since the goal at hand was to predict Steering Values , A regression problem , Adam algorith was used as optimizer and Mean Absolute Error was used as a metric
+
+__________________________________________________________________________________________________________________________
+model.compile(loss='mse',optimizer=Adam(1e-5),metrics=['mae'])
+__________________________________________________________________________________________________________________________
+
+*A Callback function to save the model with better Mean Absolute Error at any epoch was written.
+
+__________________________________________________________________________________________________________________________
+model.compile(loss='mse',optimizer=Adam(1e-5),metrics=['mae'])
+__________________________________________________________________________________________________________________________
+
 
 *Other Details to be updated soon**
