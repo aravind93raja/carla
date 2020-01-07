@@ -14,7 +14,7 @@ Goals of the Project are 4 fold :
 
 3)To Train a Neural Network based on [Nvidia's End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf "Nvidia's End to End Learning for Self-Driving Cars")  with Depth Images instead of RGB Images for prediction of Steering Values.
 
-( Done )
+( Done )  CODE: 1)Train_Neural_Network.py  2)Neural_Network_Controller.py
 
 4)To Implement and Simulate Error state Extended Kalman Filter 
 
