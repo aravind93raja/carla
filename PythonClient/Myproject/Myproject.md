@@ -44,11 +44,23 @@ ________________________________________________________________________________
 model.compile(loss='mse',optimizer=Adam(1e-5),metrics=['mae'])
 __________________________________________________________________________________________________________________________
 
+
 *A Callback function to save the model with better Mean Absolute Error at any epoch was written.
 
 __________________________________________________________________________________________________________________________
-model.compile(loss='mse',optimizer=Adam(1e-5),metrics=['mae'])
+checkpoint = ModelCheckpoint(filepath, monitor='val_mae', verbose=1, save_best_only=True, mode='min')
 __________________________________________________________________________________________________________________________
 
+*After tweaking of Hyperparameters ,This is how the training went
+
+<img src="images/mae_0.02545.png" height="400">
+
+*The model with the lowest Mean_Absolute_Error 0.02545 was chosen to program the Neural Network Controller
+
+The results of the Neural Network controller validated the training on unseen racetrack.It was able to sucessfully turn through each and every bend.
+
+The results are shown in this Video montage below.
+
+[![](http://img.youtube.com/vi/4pZeEXR3s60/0.jpg)](https://www.youtube.com/watch?v=4pZeEXR3s60 "")
 
 *Other Details to be updated soon**
